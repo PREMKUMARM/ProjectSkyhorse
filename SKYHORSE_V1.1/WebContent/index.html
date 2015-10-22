@@ -17,8 +17,8 @@
 <style>
 .jumbotron{
 text-align: center !important;
-margin-left:5% !important;
-margin-right:5% !important;
+/* margin-left:5% !important;
+margin-right:5% !important; */
 margin-top:2% !important;
 padding-top:25px !important;
 padding-bottom:25px !important;
@@ -35,6 +35,22 @@ color:#6262C9 !important;
 body{
 background: url("images/banner.jpg")no-repeat center center fixed;
 background-size: cover;
+}
+
+.my1
+{
+ margin-left:14% !important;
+}
+.my2
+{
+ margin-left:6% !important;
+}
+
+
+.btn:hover{
+transform:scale(1.1);
+color:black;
+border:1px solid black;
 }
 </style>
 <script>
@@ -53,37 +69,69 @@ function gotoFunction()
 	<div class="jumbotron centered-block">
        <h1><b>Welcome to Skyhorse Technologies</b></h1>
 	</div>
-	<div class="jumbotron centered-block">
-	      <h1><b>Admin Login</b></h1><br><br>
+	
+	<div class="jumbotron centered-block col-md-4 my1" >
+	      <h3><b>ADMIN LOGIN</b></h3><br>
 	 <table style="width:100%">
         <tr> 
-           <td>
+           <!-- <td>
                <label for="name">Name:</label>
-           </td>
+           </td> -->
            <td>  
-               <input type="text" name="firstname" id="fname"><br>
+              <input type="text" class="input input-md-3 form-control centered-block" name="firstname" id="fname" placeholder="Username"/><br>
            </td>
         </tr>
         <tr>
-           <td> 
+<!--            <td> 
                <label for="password">Password:</label>
            </td>
-           <td>
-               <input type="password" name="password" id="pswd"><br>
+ -->           <td>
+               <input type="password" class="input input-md-3 form-control centered-block" name="password" id="pswd" placeholder="Password"><br>
            </td>          
         </tr>
        <tr>
            <td>
-           </td>
-           <td>
                <span>
-                       <input type="button" class="btn btn-danger" value="SUBMIT" onclick="gotoFunction()"/>
+                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunction()"/>
                </span>
            </td>
          
        </tr>
     </table>
+    
 	</div>
+	<div class="jumbotron centered-block col-md-4 my2" >
+	      <h3><b>RETAIL LOGIN</b></h3><br>
+	 <table style="width:100%">
+        <tr> 
+           <!-- <td>
+               <label for="name">Name:</label>
+           </td> -->
+           <td>  
+               <input type="text" class="input input-md form-control" name="firstname" id="fname" placeholder="Username"><br>
+           </td>
+        </tr>
+        <tr>
+<!--            <td> 
+               <label for="password">Password:</label>
+           </td>
+ -->           <td>
+               <input type="password" class="input input-md form-control" name="password" id="pswd" placeholder="Password"><br>
+           </td>          
+        </tr>
+       <tr>
+           
+           <td>
+               <span>
+                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunction()"/>
+               </span>
+           </td>
+         
+       </tr>
+    </table>
+    
+	</div>
+	
 </div>
 </body>
 </html>
