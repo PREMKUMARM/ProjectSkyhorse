@@ -40,7 +40,7 @@ background-size: cover;
 <script>
 function gotoFunction()
 {
-	alert("DONT TOUCH ME IDIOT...");
+	alert("Wait Validating...");
 	
 }
 
@@ -51,7 +51,38 @@ function gotoFunction()
 <body>
 <div class="container">
 	<div class="jumbotron centered-block">
-   <h1><b>Welcome to Skyhorse Technologies     </b><span><input type="button" class="btn btn-danger" value="CLICK ME..!" onclick="gotoFunction()"/></span></h1>
+       <h1><b>Welcome to Skyhorse Technologies</b></h1>
+	</div>
+	<div class="jumbotron centered-block">
+	      <h1><b>Admin Login</b></h1><br><br>
+	 <table style="width:100%">
+        <tr> 
+           <td>
+               <label for="name">Name:</label>
+           </td>
+           <td>  
+               <input type="text" name="firstname" id="fname"><br>
+           </td>
+        </tr>
+        <tr>
+           <td> 
+               <label for="password">Password:</label>
+           </td>
+           <td>
+               <input type="password" name="password" id="pswd"><br>
+           </td>          
+        </tr>
+       <tr>
+           <td>
+           </td>
+           <td>
+               <span>
+                       <input type="button" class="btn btn-danger" value="SUBMIT" onclick="gotoFunction()"/>
+               </span>
+           </td>
+         
+       </tr>
+    </table>
 	</div>
 </div>
 </body>
