@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script src="js/jquery.min.js" type="text/javascript"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -10,6 +11,8 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+
 
 <title>SKYHORSE V1.1</title>
 
@@ -52,15 +55,54 @@ transform:scale(1.1);
 color:black;
 border:1px solid black;
 }
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.glyphicon-eye-close,.glyphicon-eye-open
+{
+cursor:pointer !important;
+}
 </style>
 <script>
-function gotoFunction()
+function gotoFunctionAdmin()
 {
 	alert("Wait Validating...");
 	
 }
 
+function gotoFunctionRetail()
+{
+
+	alert("Wait Validating");
+}
 </script>
+
+<script>
+$(document).ready(function(){
+    $(".passwordToggle").click(function(){
+        alert("1");
+    });
+});
+</script>
+
+
 
 <!-- ENDS HERE -->
 </head>
@@ -70,7 +112,7 @@ function gotoFunction()
        <h1><b>Welcome to Skyhorse Technologies</b></h1>
 	</div>
 	
-	<div class="jumbotron centered-block col-md-4 my1" >
+	<div class="jumbotron centered-block col-md-4 col-lg-5 my1" >
 	      <h3><b>ADMIN LOGIN</b></h3><br>
 	 <table style="width:100%">
         <tr> 
@@ -78,7 +120,10 @@ function gotoFunction()
                <label for="name">Name:</label>
            </td> -->
            <td>  
+           <div class="inner-addon right-addon">
+    			<i class="glyphicon glyphicon-user"></i>
               <input type="text" class="input input-md-3 form-control centered-block" name="firstname" id="fname" placeholder="Username"/><br>
+              </div>
            </td>
         </tr>
         <tr>
@@ -86,13 +131,16 @@ function gotoFunction()
                <label for="password">Password:</label>
            </td>
  -->           <td>
-               <input type="password" class="input input-md-3 form-control centered-block" name="password" id="pswd" placeholder="Password"><br>
+  				<div class="inner-addon right-addon " >
+    			<i class="glyphicon glyphicon-eye-close passwordToggle"></i>
+               <input type="password" class="input input-md-3 form-control centered-block passwordBlock" name="password" id="pswd" placeholder="Password"><br>
+           		</div>
            </td>          
         </tr>
        <tr>
            <td>
                <span>
-                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunction()"/>
+                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunctionAdmin()"/>
                </span>
            </td>
          
@@ -100,7 +148,7 @@ function gotoFunction()
     </table>
     
 	</div>
-	<div class="jumbotron centered-block col-md-4 my2" >
+	<div class="jumbotron centered-block col-md-4 col-lg-5 my2" >
 	      <h3><b>RETAIL LOGIN</b></h3><br>
 	 <table style="width:100%">
         <tr> 
@@ -108,7 +156,9 @@ function gotoFunction()
                <label for="name">Name:</label>
            </td> -->
            <td>  
+          
                <input type="text" class="input input-md form-control" name="firstname" id="fname" placeholder="Username"><br>
+           
            </td>
         </tr>
         <tr>
@@ -123,7 +173,7 @@ function gotoFunction()
            
            <td>
                <span>
-                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunction()"/>
+                       <input type="button" class="btn btn-success" value="SUBMIT" onclick="gotoFunctionRetail()"/>
                </span>
            </td>
          
