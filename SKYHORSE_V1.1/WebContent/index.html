@@ -95,30 +95,104 @@ function gotoFunctionRetail()
 </script>
 
 <script>
-$(document).ready(function(){
-    $("#pswd").click(function(){
-      if($("#pswd").hasClass("glyphicon-eye-close"))
-    	  {
-    	//alert("1");
-    	$("#pswd").removeClass("glyphicon-eye-close");
-    	//alert("2");
-    	$("#pswd").addClass("glyphicon-eye-open")
-    	$(".passwordBlock").attr('type','text');
-    	  }
-      else if($("#pswd").hasClass("glyphicon-eye-open"))
-	  {
-	//alert("1");
-	$("#pswd").removeClass("glyphicon-eye-open");
-	//alert("2");
-	$("#pswd").addClass("glyphicon-eye-close");
-	$(".passwordBlock").attr('type','password');
-	  }
-      
-      
-    });
-});
-</script>
 
+
+        	/* $(document).ready(function(){
+        	    $("#Adpswd").click(function(){
+        	      if($("#Adpswd").hasClass("glyphicon-eye-close"))
+        	    	  {
+        	    	//alert("1");
+        	    	$("#Adpswd").removeClass("glyphicon-eye-close");
+        	    	//alert("2");
+        	    	$("#Adpswd").addClass("glyphicon-eye-open")
+        	    	$(".AdpasswordBlock").attr('type','text');
+        	    	  }
+        	      else if($("#Adpswd").hasClass("glyphicon-eye-open"))
+        		  {
+        		//alert("1");
+        		$("#Adpswd").removeClass("glyphicon-eye-open");
+        		//alert("2");
+        		$("#Adpswd").addClass("glyphicon-eye-close");
+        		$(".AdpasswordBlock").attr('type','password');
+        		  }
+        	      
+        	      
+        	
+    }); 
+});
+        	
+        	$(document).ready(function(){
+        	    $("#Repswd").click(function(){
+        	      if($("#Repswd").hasClass("glyphicon-eye-close"))
+        	    	  {
+        	    	//alert("1");
+        	    	$("#Repswd").removeClass("glyphicon-eye-close");
+        	    	//alert("2");
+        	    	$("#Repswd").addClass("glyphicon-eye-open")
+        	    	$(".RepasswordBlock").attr('type','text');
+        	    	  }
+        	      else if($("#Repswd").hasClass("glyphicon-eye-open"))
+        		  {
+        		//alert("1");
+        		$("#Repswd").removeClass("glyphicon-eye-open");
+        		//alert("2");
+        		$("#Repswd").addClass("glyphicon-eye-close");
+        		$(".RepasswordBlock").attr('type','password');
+        		  }
+        	      
+        	      
+        	
+    });
+});*/
+</script>
+<script>
+function eyeControl(id)
+{
+//alert(id);	
+if(id=="Repswd")
+{
+	//alert("This is Retail login..");
+	if($("#Repswd").hasClass("glyphicon-eye-close"))
+        	    	  {
+        	    	//alert("1");
+        	    	$("#Repswd").removeClass("glyphicon-eye-close");
+        	    	//alert("2");
+        	    	$("#Repswd").addClass("glyphicon-eye-open")
+        	    	$(".RepasswordBlock").attr('type','text');
+        	    	  }
+        	      else if($("#Repswd").hasClass("glyphicon-eye-open"))
+        		  {
+        		//alert("1");
+        		$("#Repswd").removeClass("glyphicon-eye-open");
+        		//alert("2");
+        		$("#Repswd").addClass("glyphicon-eye-close");
+        		$(".RepasswordBlock").attr('type','password');
+        		  }
+}
+else if(id=="Adpswd")
+{
+	//alert("This is Admin login..");
+  if($("#Adpswd").hasClass("glyphicon-eye-close"))
+        	    	  {
+        	    	//alert("1");
+        	    	$("#Adpswd").removeClass("glyphicon-eye-close");
+        	    	//alert("2");
+        	    	$("#Adpswd").addClass("glyphicon-eye-open")
+        	    	$(".AdpasswordBlock").attr('type','text');
+        	    	  }
+        	      else if($("#Adpswd").hasClass("glyphicon-eye-open"))
+        		  	  {
+        			//alert("1");
+        			$("#Adpswd").removeClass("glyphicon-eye-open");
+        			//alert("2");
+        			$("#Adpswd").addClass("glyphicon-eye-close");
+        			$(".AdpasswordBlock").attr('type','password');
+        		  	  }
+	}
+
+}
+
+</script>
 
 
 <!-- ENDS HERE -->
@@ -149,8 +223,8 @@ $(document).ready(function(){
            </td>
  -->           <td>
   				<div class="inner-addon right-addon " >
-    			<i class="glyphicon glyphicon-eye-close passwordToggle" id="pswd"></i>
-               <input type="password" class="input input-md-3 form-control centered-block passwordBlock" name="password"  placeholder="Password"><br>
+    			<i class="glyphicon glyphicon-eye-close passwordToggle" id="Adpswd" onclick=eyeControl(this.id);></i>
+               <input type="password" class="input input-md-3 form-control centered-block AdpasswordBlock" name="password"  placeholder="Password"><br>
            		</div>
            </td>          
         </tr>
@@ -183,7 +257,10 @@ $(document).ready(function(){
                <label for="password">Password:</label>
            </td>
  -->           <td>
-               <input type="password" class="input input-md form-control" name="password" id="pswd" placeholder="Password"><br>
+               <div class="inner-addon right-addon " >
+    			<i class="glyphicon glyphicon-eye-close passwordToggle" id="Repswd"  onclick=eyeControl(this.id);></i>
+               <input type="password" class="input input-md-3 form-control centered-block RepasswordBlock" name="password"  placeholder="Password"><br>
+               </div>
            </td>          
         </tr>
        <tr>
