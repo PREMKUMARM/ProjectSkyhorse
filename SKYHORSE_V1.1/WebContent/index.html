@@ -96,8 +96,25 @@ function gotoFunctionRetail()
 
 <script>
 $(document).ready(function(){
-    $(".passwordToggle").click(function(){
-        alert("1");
+    $("#pswd").click(function(){
+      if($("#pswd").hasClass("glyphicon-eye-close"))
+    	  {
+    	//alert("1");
+    	$("#pswd").removeClass("glyphicon-eye-close");
+    	//alert("2");
+    	$("#pswd").addClass("glyphicon-eye-open")
+    	$(".passwordBlock").attr('type','text');
+    	  }
+      else if($("#pswd").hasClass("glyphicon-eye-open"))
+	  {
+	//alert("1");
+	$("#pswd").removeClass("glyphicon-eye-open");
+	//alert("2");
+	$("#pswd").addClass("glyphicon-eye-close");
+	$(".passwordBlock").attr('type','password');
+	  }
+      
+      
     });
 });
 </script>
@@ -132,8 +149,8 @@ $(document).ready(function(){
            </td>
  -->           <td>
   				<div class="inner-addon right-addon " >
-    			<i class="glyphicon glyphicon-eye-close passwordToggle"></i>
-               <input type="password" class="input input-md-3 form-control centered-block passwordBlock" name="password" id="pswd" placeholder="Password"><br>
+    			<i class="glyphicon glyphicon-eye-close passwordToggle" id="pswd"></i>
+               <input type="password" class="input input-md-3 form-control centered-block passwordBlock" name="password"  placeholder="Password"><br>
            		</div>
            </td>          
         </tr>
